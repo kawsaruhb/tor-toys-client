@@ -9,7 +9,7 @@ const Navbar = () => {
         <li className='text-lg'> <ActiveLink to=''>All Toys</ActiveLink> </li>
         <li className='text-lg'> <ActiveLink to=''>My Toys</ActiveLink> </li>
         <li className='text-lg'> <ActiveLink to=''>Add A Toy</ActiveLink> </li>
-        <li className='text-lg'> <ActiveLink to=''>Blog</ActiveLink> </li>
+        <li className='text-lg'> <ActiveLink to='/blogs'>Blogs</ActiveLink> </li>
         {/* {
             user?.email ? <>
                 <li> <Link to='/bookings'>My Bookings</Link> </li>
