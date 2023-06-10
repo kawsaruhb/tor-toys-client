@@ -5,11 +5,11 @@ import ActiveLink from './ActiveLink';
 const Navbar = () => {
 
     const navItems = <>
-        <li className='text-lg'> <ActiveLink to='/'>Home</ActiveLink> </li>
-        <li className='text-lg'> <ActiveLink to=''>All Toys</ActiveLink> </li>
-        <li className='text-lg'> <ActiveLink to=''>My Toys</ActiveLink> </li>
-        <li className='text-lg'> <ActiveLink to=''>Add A Toy</ActiveLink> </li>
-        <li className='text-lg'> <ActiveLink to='/blogs'>Blogs</ActiveLink> </li>
+        <li className='text-lg text-[#fdea00]'> <ActiveLink to='/'>Home</ActiveLink> </li>
+        <li className='text-lg text-[#fdea00]'> <ActiveLink to='/allToys'>All Toys</ActiveLink> </li>
+        <li className='text-lg text-[#fdea00]'> <ActiveLink to='/myToys'>My Toys</ActiveLink> </li>
+        <li className='text-lg text-[#fdea00]'> <ActiveLink to='/addToy'>Add A Toy</ActiveLink> </li>
+        <li className='text-lg text-[#fdea00]'> <ActiveLink to='/blogs'>Blogs</ActiveLink> </li>
         {/* {
             user?.email ? <>
                 <li> <Link to='/bookings'>My Bookings</Link> </li>
