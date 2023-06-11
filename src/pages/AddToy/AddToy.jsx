@@ -1,6 +1,37 @@
 import React from 'react';
 
 const AddToy = () => {
+
+    const handleAddToy = event => {
+        event.preventDefault();
+        const form = event.target;
+
+        const name = form.name.value;
+        const quantity = form.quantity.value;
+        const seller = form.seller.value;
+        const email = form.email.value;
+        const category = form.category.value;
+        const details = form.details.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const photo = form.photo.value;
+
+        const newToy = { name, quantity, seller, email, category, details, price, rating, photo };
+        console.log(newToy);
+
+        fetch('http://localhost:5000/addToy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newToy)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
+
     return (
         <div className="bg-base-300 text-white rounded-lg p-10 mt-4 mb-4">
             <div className='relative mb-8'>
@@ -9,7 +40,7 @@ const AddToy = () => {
                 {/* <p className='absolute top-20 right-48 px text-5xl text-black'>Only For Kids</p> */}
             </div>
 
-            <form onSubmit>
+            <form onSubmit={handleAddToy}>
                 {/* form name and quantity row */}
                 <div className="md:flex md:justify-center gap-4">
                     <div className="form-control md:w-1/2">
