@@ -3,12 +3,12 @@ import React from 'react';
 const Banner = () => {
     return (
         <div>
-            <div className="carousel rounded-lg w-full h-[480px]">
+            <div className="carousel rounded-lg w-full h-[450px]">
                 <div id="item1" className="carousel-item w-full">
-                    <img src="https://i.ibb.co/M7yrBBc/12290936-Colorful-posters-design-with-stylish-cars.jpg" className="w-full" />
+                    <img src="https://i.ibb.co/qFYPbYc/29806502-7611503.jpg" className="w-full" />
                 </div>
                 <div id="item2" className="carousel-item w-full">
-                    <img src="https://i.ibb.co/tDj5VB0/2204474-11410.jpg" className="w-full" />
+                    <img src="https://i.ibb.co/M7yrBBc/12290936-Colorful-posters-design-with-stylish-cars.jpg" className="w-full" />
                 </div>
                 <div id="item3" className="carousel-item w-full">
                     <img src="https://i.ibb.co/qmwth9d/5655196-57638.jpg" className="w-full" />

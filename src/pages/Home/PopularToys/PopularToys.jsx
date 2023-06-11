@@ -5,7 +5,7 @@ AOS.init();
 
 const PopularToys = () => {
     return (
-        <div className='mt-14 mb-8'>
+        <div className='mt-8 mb-8'>
             <div className='text-center'>
                 <h2 className='text-5xl mb-3 font-bold text-white'>Customer Loves</h2>
                 <p className='text-base mb-10 font-semibold text-[#fdea00]'>POPULAR PRODUCTS</p>
