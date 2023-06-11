@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-            <div className='container mx-auto px-8 mb-8 bg-base-300 text-white rounded-lg'>
+            <div className='container mx-auto p-10 mt-4 mb-8 bg-base-300 text-white rounded-lg'>
 
                 <h1 className="mt-2 p-2 text-2xl font-bold"> 1.What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
                 <p className="ms-4 p-6 text-lg"><span className="font-bold ">Answer:</span> When a user logins in, the authorization server issues an access token, which is an artifact that client applications can use to make secure calls to an API server. <br /> For security purposes, access tokens may be valid for a short amount of time. Once they expire, client applications can use a refresh token to refresh the access token. That is, a refresh token is a credential artifact that lets a client application get new access tokens without having to ask the user to log in again. <br /> JWT can be used as an access token and/or a refresh token. Access tokens are used to access protected resources, such as an API, while refresh tokens are used to obtain new access tokens when the current access token expires. <br /> In web browser, you can store JWT in local/session storage or in cookie. Both have vulnerabilities. You can choose the one you prefer, but you should take the security as a whole to be secured and processes should be well designed.  </p>

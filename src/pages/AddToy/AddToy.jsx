@@ -2,8 +2,12 @@ import React from 'react';
 
 const AddToy = () => {
     return (
-        <div className="bg-[#F4F3F1] text-white p-10">
-            <h2 className="text-3xl text-black text-center font-extrabold mb-4">Add Toy</h2>
+        <div className="bg-base-300 text-white rounded-lg p-10 mt-4 mb-4">
+            <div className='relative mb-8'>
+                <img className='w-full h-[480px] rounded-lg' src="https://i.ibb.co/pygJRBT/21002550-2108-w023-n001-964-B-p1-964.jpg" alt="" />
+                <h2 className="absolute top-0 px-[527px] text-3xl text-black text-center bg-yellow-300 font-bold rounded-lg mb-6">Add A Toy</h2>
+                {/* <p className='absolute top-20 right-48 px text-5xl text-black'>Only For Kids</p> */}
+            </div>
 
             <form onSubmit>
                 {/* form name and quantity row */}
