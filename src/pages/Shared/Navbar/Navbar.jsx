@@ -43,7 +43,7 @@ const Navbar = () => {
                 <div className="w-12 me-2">
                     <img className='rounded-full' src="https://i.pravatar.cc/350" />
                 </div>
-                <button className="btn btn-active bg-black text-white  font-bold px-6 py-0 rounded-lg">Sign In</button>
+                <Link to='/login'><button className="btn btn-active bg-black text-white  font-bold px-6 py-0 rounded-lg">Sign In</button></Link>
                 <Link to='/register'><button className="btn btn-active bg-[#fdea00] text-black rounded-lg font-bold mx-3 px-6 py-0 border-none">Sign Up</button></Link>
             </div>
         </div>

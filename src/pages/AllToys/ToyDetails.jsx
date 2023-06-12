@@ -11,7 +11,7 @@ const ToyDetails = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-300">
+            <div className="hero min-h-screen bg-base-300 rounded-lg mt-8 mb-8">
                 <div className="hero-content flex-col lg:flex-row lg:gap-24 text-whit">
                     <img src={photo} className="max-w-md rounded-lg shadow-2xl" />
                     <div>
@@ -25,12 +25,15 @@ const ToyDetails = () => {
                             <p className="mt-1"><span className='text-lg font-bold'>Seller Email:</span> {email}</p>
                             <p className="mt-1"><span className='text-lg font-bold'>Price:</span> ${price}</p>
                             <p className="mt-1"><span className='text-lg font-bold'>Quantity:</span> {quantity}</p>
+                            <div className='flex gap-1 mt-1'>
+                                <Rating
+                                    style={{ maxWidth: 120 }}
+                                    value={rating}
+                                    readOnly
+                                />
+                                <span>{rating}</span>
+                            </div>
 
-                            <Rating
-                                style={{ maxWidth: 120 }}
-                                value={rating}
-                                readOnly
-                            />
                         </div>
                     </div>
                 </div>

@@ -7,6 +7,11 @@ import MyToys from "../pages/MyToys/MyToys";
 import UpdateMyToys from "../pages/MyToys/UpdateMyToys";
 import AllToys from "../pages/AllToys/AllToys";
 import ToyDetails from "../pages/AllToys/ToyDetails";
+import Category from "../pages/Home/Category/Category";
+import CategoryToys from "../pages/Home/Category/CategoryToys";
+import LoginLayout from "../Layout/LoginLayout";
+import Login from "../pages/LoginRegister/Login/Login";
+import Register from "../pages/LoginRegister/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +22,11 @@ const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>
         },
+        // {
+        //     path: '/category/:id',
+        //     element: <CategoryToys></CategoryToys>,
+        //     loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+        // },
         {
             path: '/addToy',
             element: <AddToy></AddToy>
@@ -46,6 +56,21 @@ const router = createBrowserRouter([
             element: <Blogs></Blogs>
         }
       ]
+    },
+    {
+        path: '/',
+        element: <LoginLayout></LoginLayout>,
+        children: [
+            
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            }
+        ]
     },
   ]);
 
