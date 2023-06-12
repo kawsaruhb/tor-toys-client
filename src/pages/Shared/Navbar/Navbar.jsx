@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveLink from './ActiveLink';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Navbar = () => {
 
@@ -17,6 +18,8 @@ const Navbar = () => {
             </> : <li> <Link to='/login'>Login</Link> </li>
         } */}
     </>
+
+    const { user } = useContext(AuthContext);
 
     return (
         <div className="navbar bg-base-100 h-24 mb-4">
@@ -40,11 +43,18 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="w-12 me-2">
-                    <img className='rounded-full' src="https://i.pravatar.cc/350" />
-                </div>
-                <Link to='/login'><button className="btn btn-active bg-black text-white  font-bold px-6 py-0 rounded-lg">Sign In</button></Link>
-                <Link to='/register'><button className="btn btn-active bg-[#fdea00] text-black rounded-lg font-bold mx-3 px-6 py-0 border-none">Sign Up</button></Link>
+                {
+                    user && <div className="w-12 me-2">
+                        <img className='rounded-full' src="https://i.pravatar.cc/350" />
+                    </div>
+                }
+                {
+                    user ? <Link to='/register'><button className="btn btn-active bg-[#fdea00] text-black rounded-lg font-bold mx-3 px-6 py-0 border-none">Sign Out</button></Link> :
+                        <Link to='/login'><button className="btn btn-active bg-black text-white  font-bold px-6 py-0 rounded-lg">Sign In</button></Link>
+                }
+                {!user ?
+                    <Link to='/register'><button className="btn btn-active bg-[#fdea00] text-black rounded-lg font-bold mx-3 px-6 py-0 border-none">Sign Up</button></Link> : <h6></h6>
+                }
             </div>
         </div>
     );
