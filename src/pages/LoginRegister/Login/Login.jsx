@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Login = () => {
+
+    const { signIn } = useContext(AuthContext);
+
+    const handleLogIn = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            form.reset();
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
     return (
         <div>
             <div className="bg-base-300 rounded-lg mt-8 mb-8 ">
                 <div className=" flex justify-center">
 
                     <div className="card w-full max-w-md shadow-3xl bg-base-100 p-3 mt-10 mb-10">
-                        <form onSubmit className="card-body">
+                        <form onSubmit={handleLogIn} className="card-body">
                             <h2 className='flex justify-center text-2xl font-bold text-white'>Welcome Back</h2>
                             <hr />
                             <div className="form-control">
