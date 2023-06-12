@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const MyToysRow = ({ toy }) => {
+const MyToysRow = ({ toy, toys, setToys }) => {
 
     const { _id, name, quantity, seller, email, category, details, price, rating, photo } = toy;
 
@@ -31,6 +31,8 @@ const MyToysRow = ({ toy }) => {
                                 'Your toy has been deleted.',
                                 'success'
                             )
+                            const remaining = toys.filter(t => t._id !== _id);
+                            setToys(remaining);
                         }
                     })
 
