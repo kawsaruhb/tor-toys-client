@@ -19,7 +19,7 @@ const MyToysRow = ({ toy }) => {
                     </div>
                     <div className='mt-8'>
                         <h2 className='text-lg font-bold'>{name}</h2>
-                        <p className='mt-1'>{details}</p>
+                        {/* <p className='mt-1'>{details}</p> */}
                         <h5 className='badge badge-warning badge-sm font-semibold mt-2'>{category}</h5>
                     </div>
                 </div>
@@ -27,7 +27,7 @@ const MyToysRow = ({ toy }) => {
 
             <td className=''>
                 <h2 className='text-base font-bold'>{seller}</h2>
-                <p className='mt-1'>{email}</p>
+                {/* <p className='mt-1'>{email}</p> */}
             </td>
             <td className='text-base text-center'>${price}</td>
             <td className='text-base text-center'>{quantity}</td>
