@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const ToyDetails = () => {
 
@@ -10,7 +12,7 @@ const ToyDetails = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-300">
-                <div className="hero-content flex-col lg:flex-row lg:gap-24 text-white">
+                <div className="hero-content flex-col lg:flex-row lg:gap-24 text-whit">
                     <img src={photo} className="max-w-md rounded-lg shadow-2xl" />
                     <div>
                         <div className='flex gap-1'>
@@ -18,18 +20,18 @@ const ToyDetails = () => {
                             {/* <p className="mt-6">{details}</p> */}
                             <p className="mt-8 badge badge-warning badge-xs font-bold">{category}</p>
                         </div>
-                        <p className="">Seller: {seller}</p>
-                        <p className="">Seller Email: {email}</p>
-                        <p className="">Price: ${price}</p>
-                        <p className="">Quantity: {quantity}</p>
-                        <div className="rating mt-1">
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                        </div>
+                        <div className='ms-1 mt-2'>
+                            <p className="mt-1"><span className='text-lg font-bold'>Seller:</span> {seller}</p>
+                            <p className="mt-1"><span className='text-lg font-bold'>Seller Email:</span> {email}</p>
+                            <p className="mt-1"><span className='text-lg font-bold'>Price:</span> ${price}</p>
+                            <p className="mt-1"><span className='text-lg font-bold'>Quantity:</span> {quantity}</p>
 
+                            <Rating
+                                style={{ maxWidth: 120 }}
+                                value={rating}
+                                readOnly
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
