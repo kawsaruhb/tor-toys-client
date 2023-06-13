@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CategoryToys = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const CategoryToys = ({ toy }) => {
+  return (
+    <div>
+      <h2></h2>
+    </div>
+  );
 };
 
 export default CategoryToys;
