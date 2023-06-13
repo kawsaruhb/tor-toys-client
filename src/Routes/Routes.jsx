@@ -12,6 +12,7 @@ import CategoryToys from "../pages/Home/Category/CategoryToys";
 import LoginLayout from "../Layout/LoginLayout";
 import Login from "../pages/LoginRegister/Login/Login";
 import Register from "../pages/LoginRegister/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         // },
         {
             path: '/addToy',
-            element: <AddToy></AddToy>
+            element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
         },
         {
             path: '/allToys',
@@ -38,12 +39,12 @@ const router = createBrowserRouter([
         },
         {
             path: '/toyDetails/:id',
-            element: <ToyDetails></ToyDetails>,
+            element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
             loader: ({params}) => fetch(`http://localhost:5000/addToy/${params.id}`)
         },
         {
             path: '/myToys',
-            element: <MyToys></MyToys>,
+            element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
             loader: () => fetch('http://localhost:5000/addToy')
         },
         {

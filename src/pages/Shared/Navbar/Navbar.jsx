@@ -45,8 +45,9 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user && <div className="w-12 me-2">
+                    user && <div className="w-12 relative group">
                         <img className='rounded-full' src="https://i.pravatar.cc/350" />
+                        <div className="opacity-0 group-hover:opacity-100 duration-300 absolute top-11 text-white">{user.displayName}</div>
                     </div>
                 }
                 {
