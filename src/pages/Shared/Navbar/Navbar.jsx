@@ -11,15 +11,16 @@ const Navbar = () => {
         <li className='text-lg text-[#fdea00]'> <ActiveLink to='/myToys'>My Toys</ActiveLink> </li>
         <li className='text-lg text-[#fdea00]'> <ActiveLink to='/addToy'>Add A Toy</ActiveLink> </li>
         <li className='text-lg text-[#fdea00]'> <ActiveLink to='/blogs'>Blogs</ActiveLink> </li>
-        {/* {
-            user?.email ? <>
-                <li> <Link to='/bookings'>My Bookings</Link> </li>
-                <li><button onClick={handleLogout}>Logout</button></li>
-            </> : <li> <Link to='/login'>Login</Link> </li>
-        } */}
+
     </>
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
 
     return (
         <div className="navbar bg-base-100 h-24 mb-4">
@@ -49,7 +50,7 @@ const Navbar = () => {
                     </div>
                 }
                 {
-                    user ? <Link to='/register'><button className="btn btn-active bg-[#fdea00] text-black rounded-lg font-bold mx-3 px-6 py-0 border-none">Sign Out</button></Link> :
+                    user ? <button onClick={handleLogOut} className="btn btn-active bg-[#fdea00] text-black rounded-lg font-bold mx-3 px-6 py-0 border-none">Sign Out</button> :
                         <Link to='/login'><button className="btn btn-active bg-black text-white  font-bold px-6 py-0 rounded-lg">Sign In</button></Link>
                 }
                 {!user ?
